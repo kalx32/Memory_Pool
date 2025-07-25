@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g -shared -Wl,-soname,libdmpool.so -o "/home/abduljf/Desktop/Local Repo/C Test Project/Memory_Pool/Memory_Pool/binary/libdmpool.so" CMakeFiles/dmpool.dir/cn_pool.c.o 

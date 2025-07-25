@@ -1,0 +1,2 @@
+/usr/bin/ar qc "/home/abduljf/Desktop/Local Repo/C Test Project/Memory_Pool/Memory_Pool/binary/libmpool.a" CMakeFiles/mpool.dir/cn_pool.c.o
+/usr/bin/ranlib "/home/abduljf/Desktop/Local Repo/C Test Project/Memory_Pool/Memory_Pool/binary/libmpool.a"

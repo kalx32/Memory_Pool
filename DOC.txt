@@ -1,0 +1,53 @@
+//Hi There!
+
+Working in a memory constrained environment sometimes can be so tricky
+So many things need to be paid attention of, especially in memory utilization and real-time performance
+
+For those with experiance working in operating system environment, already familiar with Dynamic memory allocation tool in C 
+It is a very imporatnt feature that enables a programmer to allocate the memory when needed and free it when done to be used for other purposes.
+
+However!
+This wonderful feature may not be of help in Constrained environment where one could be working with only 2KB or 1KB of RAM!
+The genaral malloc() or calloc() require additional memory for storing meta data,
+Also, frequent allocation and Deallocation causes memory fragmentation which leaves additional white space that can not be allocated.
+This causes many experianced programmers to avoid using this feature but rather apply other methods
+
+Also,
+Allocating a heap may take up to couple of hundreds of uS(microseconds) or a few ms
+This also causes a problem when a real-time behaviour is required (Most of the case for Embedded devices)
+
+This library provides an alternate method for memory allocation using static allocated pools
+with a total of 3 callable methods provided, a programmer can initialize, allocate and release memory when needed.
+
+
+*Example usage*
+
+
+void main(){
+    cn_mpool_t mpool; //handle to the pool, this can be used to manage the pool
+
+    //initialize the pool before usage
+    cn_init_pool(&mpool); //now you can start to use the pool
+    char* mem1 = (char*) cn_allocate_pool(&mpool);
+
+    //start using
+    mem1 = "pool created!";
+
+    //you can allocate another available region in the same pool
+    typedef struct mystruct{
+        char name[20];
+        int age;
+
+    } mystruct;
+
+    mystruct* p = (mystruct*) cn_allocate_pool(&mpool);
+    p->name ={'a','b','c','d'};
+    p->age =20;
+
+    //de-allocating / releasing the memory
+    cn_release_pool(&mpool, mem1); //releasing memory allocated for mem1
+    cn_release_pool(&mpool, p); //releasing memory allocated for p
+
+    while(1);
+    
+}
