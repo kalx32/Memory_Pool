@@ -28,7 +28,7 @@ void main(){
 
     //initialize the pool before usage
     cn_init_pool(&mpool); //now you can start to use the pool
-    char* mem1 = (char*) cn_allocate_pool(&mpool);
+    char* mem1 = (char*) cn_allocate_pool(&mpool); //allocated block of size [CN_POOL_SIZE/CN_NUM_BLOCKS]
 
     //start using
     mem1 = "pool created!";

@@ -1,5 +1,0 @@
-apool 24 0.000129481
-ipool 36 8.25631e-05
-rpool 1 0
----
-rpool

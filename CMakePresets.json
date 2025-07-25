@@ -4,5 +4,24 @@
         "major":3,
         "minor":28
     },
-    "cmakeConfigurePresets":[]
+    "configurePresets":[
+        {
+            "name":"debug",
+            "hidden": false,
+            "binaryDir":"${sourceDir}/cmake_build/debug",
+            "generator":"Unix Makefiles",
+            "cacheVariables":{
+                "CMAKE_BUILD_TYPE":"Debug"
+            }
+        },
+        {
+            "name":"release",
+            "hidden": false,
+            "binaryDir":"${sourceDir}/cmake_build/release",
+            "generator":"Unix Makefiles",
+            "cacheVariables":{
+                "CMAKE_BUILD_TYPE":"Release"
+            }
+        }
+    ]
 }
