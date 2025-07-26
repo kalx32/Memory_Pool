@@ -19,7 +19,7 @@ To compile this project, make sure you have the following tools installed and av
    `cd cmake_build/release`
 
 4. Run the following command
-   `make`
+   ```make```
 
 5. The output is built in the folder
-   `/binary`
+   ```/binary```
