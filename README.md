@@ -14,7 +14,12 @@ To compile this project, make sure you have the following tools installed and av
 
    ```bash
    cmake . --preset release
+3. Browse to the folder containing build files
 /cmake_build/release
 cd cmake_build/release
+
+4. Run the following command
 make
+
+5. The output is built in the folder
 /binary
