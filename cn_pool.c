@@ -24,5 +24,11 @@ void* cn_allocate_pool(cn_mpool_t* mpool){
 }
 
 void cn_release_pool(cn_mpool_t* mpool, void* mem_ptr){
+    size_t offset = (intptr_t ) mem_ptr - (intptr_t) mpool->rbytes; //obtain the offset number of the block referenced by mem_ptr
+    size_t bsize, index;
+    bsize = CN_POOL_SIZE/CN_NUM_BLOCKS;
+    index = offset/bsize;
 
+    memset(mem_ptr, 0, bsize); //initialize 0 throughout the block
+    mpool->nblocks[index] = true; //release the pool <mark it available>
 }
