@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/allocate_pool_test.dir/tests/allocate_pool_test.c.o -o "/home/abduljf/Desktop/Local Repo/C Test Project/Memory_Pool/Memory_Pool/binary/tests-out/allocate_pool_test"  "/home/abduljf/Desktop/Local Repo/C Test Project/Memory_Pool/Memory_Pool/binary/libmpool.a" 
